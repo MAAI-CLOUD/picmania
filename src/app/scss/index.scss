@@ -1,0 +1,57 @@
+@import '_plugins.scss';
+@import 'default/variable';
+@import 'default/typography';
+@import 'common/general';
+@import 'common/slider';
+@import 'common/video-modal';
+@import 'common/sidebar';
+/* Estilos para el pop-up */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background-color: #181818;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: red; /* Cambia el color al pasar el mouse por encima */
+  }
+
+  #progress-container {
+    width: 100%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  
+  #progress-bar {
+    height: 100%;
+    background-color: #4caf50;
+    width: 0;
+  }
+
+
+
+  
