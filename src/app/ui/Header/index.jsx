@@ -76,7 +76,7 @@ export default function Header({ variant }) {
             <Div className="cs-main_header_in">
               <Div className="cs-main_header_left">
                 <Link className="cs-site_branding" href="/">
-                  <img src="/images/PICMANIA.svg" alt="Logo" />
+                  <img src="/images/PICMANIA.svg" alt="Logo" style={{width:'40%'}} />
                 </Link>
               </Div>
               <Div className="cs-main_header_center">

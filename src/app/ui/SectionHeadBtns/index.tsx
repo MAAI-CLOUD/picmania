@@ -174,10 +174,10 @@ export default function SectionHeadingBtns({ title, subtitle, btnLink, btnText, 
   };
 
   return (
-    <Div className={variant ? `cs-section_heading ${variant}` : `cs-section_heading cs-style1`}>
+    <Div >
       {clientUser && (
         <Link href='#' className="cs-center" onClick={handleDownloadAll}>
-          <Div className="cs-toolbox">
+          <Div className="">
             <span className="cs-icon_btn">
               <Icon icon="fa-cloud-download" style={{ marginRight: '5px', fontSize: '30px', marginBottom: '10px' }} />
               Descargar
@@ -187,7 +187,7 @@ export default function SectionHeadingBtns({ title, subtitle, btnLink, btnText, 
       )}
 
       <Link href='#' className="cs-center" onClick={popUp}>
-        <Div className="cs-toolbox">
+        <Div className="">
           <span className="cs-icon_btn">
             <Icon icon="fa-upload" style={{ marginRight: '5px', fontSize: '30px' }} />
             Cargar fotos
