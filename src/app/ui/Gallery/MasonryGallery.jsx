@@ -56,7 +56,7 @@ export default function MasonryGallery({ galeriaInfo, idGaleria, fotosData }) {
             </Div>
             <Spacing lg="0" md="40" />
           </Div>
-          <Div className="col-xl-5 offset-xl-1 col-lg-6" style={{zIndex:0}}>
+          <Div className="col-xl-5 offset-xl-1 col-lg-6" style={{ zIndex: 0 }}>
             <SectionHeading
               title="Compatir Experiencias"
               subtitle=""
@@ -101,68 +101,68 @@ export default function MasonryGallery({ galeriaInfo, idGaleria, fotosData }) {
 
       {
         clientUser &&
-        <LightGallery
-          speed={500}
-          plugins={[lgThumbnail, lgZoom]}
-          elementClassNames="cs-masonry_4_col"
-          download={false}
-        >
-          {
-            fotosData.slice(0, itemShow).map((item, index) => (
-              <Div
-                href={baseUrl + item.attributes.foto.data.attributes.url}
-                className={'all'}
-                key={index}
-              >
+        Array.isArray(fotosData) && fotosData.length > 0 && (
+          <LightGallery
+            speed={500}
+            plugins={[lgThumbnail, lgZoom]}
+            elementClassNames="cs-masonry_4_col"
+            download={false}
+          >
+            {
+              fotosData.slice(0, itemShow).map((item, index) => (
                 <Div
-                  className="cs-portfolio cs-style1 cs-type2"
-                  style={{ height: `${item.height}px` }}
+                  href={baseUrl + item.attributes.foto.data.attributes.url}
+                  className={'all'}
+                  key={index}
                 >
-                  <Div className="cs-lightbox_item">
-                    <img
-                      src={baseUrl + item.attributes.foto.data.attributes.url}
-                      alt={item.title}
-                      style={{ height: `${item.height}px` }}
-                    />
-                  </Div>
-                  <Div className="cs-portfolio_hover" />
-                  <span className="cs-plus" />
                   <Div
-                    className="cs-portfolio_bg cs-bg"
-                    style={{ backgroundImage: `url("${baseUrl + item.attributes.foto.data.attributes.url}")` }}
-                  />
-                  <Div className="cs-portfolio_info">
-                    <Div className="cs-portfolio_info_bg cs-accent_bg" />
-                    <h2 className="cs-portfolio_title">{item.attributes.galeria.data.attributes.nombreGaleria}</h2>
-                    <Div className="cs-portfolio_subtitle">{item.attributes.galeria.data.attributes.descripcionGaleria}</Div>
-                    <button
-                      className="download-button"
-                      style={{
-                        position: 'absolute',
-                        top: '10px', /* Ajusta la posición vertical según sea necesario */
-                        right: '10px', /* Ajusta la posición horizontal según sea necesario */
-                        padding: '10px 10px',
-                        backgroundColor: '#ff4a17', /* Cambia el color de fondo según tus preferencias */
-                        color: '#fff', /* Cambia el color del texto según tus preferencias */
-                        border: 'none',
-                        borderRadius: '25px',
-                        cursor: 'pointer',
-                        fontSize: '14px',
-                        fontWeight: 'bold',
-                        transition: 'background-color 0.3s ease',
-                      }}
-                      onClick={() => handleDownload(baseUrl + item.attributes.foto.data.attributes.url, item.attributes.foto.data.attributes.url)}
-                    >
-                      Descargar
-                    </button>
+                    className="cs-portfolio cs-style1 cs-type2"
+                    style={{ height: `${item.height}px` }}
+                  >
+                    <Div className="cs-lightbox_item">
+                      <img
+                        src={baseUrl + item.attributes.foto.data.attributes.url}
+                        alt={item.title}
+                        style={{ height: `${item.height}px` }}
+                      />
+                    </Div>
+                    <Div className="cs-portfolio_hover" />
+                    <span className="cs-plus" />
+                    <Div
+                      className="cs-portfolio_bg cs-bg"
+                      style={{ backgroundImage: `url("${baseUrl + item.attributes.foto.data.attributes.url}")` }}
+                    />
+                    <Div className="cs-portfolio_info">
+                      <Div className="cs-portfolio_info_bg cs-accent_bg" />
+                      <h2 className="cs-portfolio_title">{item.attributes.galeria.data.attributes.nombreGaleria}</h2>
+                      <Div className="cs-portfolio_subtitle">{item.attributes.galeria.data.attributes.descripcionGaleria}</Div>
+                      <button
+                        className="download-button"
+                        style={{
+                          position: 'absolute',
+                          top: '10px',
+                          right: '10px',
+                          padding: '10px 10px',
+                          backgroundColor: '#ff4a17',
+                          color: '#fff',
+                          border: 'none',
+                          borderRadius: '25px',
+                          cursor: 'pointer',
+                          fontSize: '14px',
+                          fontWeight: 'bold',
+                          transition: 'background-color 0.3s ease',
+                        }}
+                        onClick={() => handleDownload(baseUrl + item.attributes.foto.data.attributes.url, item.attributes.foto.data.attributes.url)}
+                      >
+                        Descargar
+                      </button>
+                    </Div>
                   </Div>
                 </Div>
-
-              </Div>
-            ))
-          }
-
-        </LightGallery>
+              ))
+            }
+          </LightGallery>
+        )
       }
 
       <Div className="container">

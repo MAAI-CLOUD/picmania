@@ -1,6 +1,5 @@
 'use client'
 import { GetServerSideProps } from "next";
-
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 import Spacing from "../../app/ui/Spacing";
@@ -14,6 +13,11 @@ const baseUrl = getStrapiURL()
 
 const GalleryUploads = ({ galeria }: any) => {
   const [itemShow, setItemShow] = useState(10);
+
+  // Verifica si 'galeria' está definido y es un array
+  if (!galeria || !Array.isArray(galeria)) {
+    return <div>No hay galerías disponibles.</div>;
+  }
 
   return (
     <>

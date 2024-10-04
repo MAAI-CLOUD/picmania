@@ -1,4 +1,3 @@
-
 import { GetServerSideProps } from "next";
 import React from "react";
 import GalleryUploads from "../components/galeriaHtmlPage/page";
