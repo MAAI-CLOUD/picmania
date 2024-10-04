@@ -12,7 +12,7 @@ import Header from "../../app/ui/Header";
 const baseUrl = getStrapiURL()
 
 const GalleryUploads = ({ galeria }: any) => {
-  const [itemShow, setItemShow] = useState(10);
+  const [itemShow, setItemShow] = useState(11);
 
   // Verifica si 'galeria' está definido y es un array
   if (!galeria || !Array.isArray(galeria)) {
